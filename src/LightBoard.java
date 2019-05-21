@@ -2,7 +2,7 @@ public class LightBoard {
     private boolean[][] lights;
 
     public LightBoard (int numRows, int numCol){
-        this.lights = new boolean[numRows][numCol];
+        lights = new boolean[numRows][numCol];
         int chance;
         for (int a = 0; a < numRows; a++){
             for (int b = 0; b < numCol; b++){
@@ -28,6 +28,30 @@ public class LightBoard {
             return true;
         }
         return lights[row][col];
+    }
+    /**public void printLightBoard(LightBoard light){
+        String board = "";
+        for (int a = 0; a < light.length; a++){
+            for (int b = 0; b < light[0].length; b++){
+                if(light[a][b] == true){
+                    board += "true ";
+                }
+                else{
+                    board += "false";
+                }
+            }
+            board += "\n";
+        }
+    }
+     */
+    public static void main(String [] args){
+    LightBoard sim = new LightBoard (3,3);
+    String board = "";
+    for (int a = 0; a < 3; a++){
+        for (int b = 0; b < 3; b++){
+        }
+    }
+    System.out.println(sim.evaluateLight(0,0));
     }
 }
 
