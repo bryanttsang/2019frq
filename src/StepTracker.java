@@ -30,11 +30,11 @@ public class StepTracker
 
     public double averageSteps()
     {
-        double s = 0.0;
+        double avg = 0.0;
         if (days > 0)
         {
-            s = (double)steps / (double)days;
+            avg = (double)steps / (double)days;
         }
-        return s;
+        return avg;
     }
 }
