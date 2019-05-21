@@ -1,6 +1,6 @@
 public class StepTracker
 {
-    public static void main(String[] WriteTheCompleteStepTrackerClassIncludingTheConstructorAndAnyRequiredInstanceVariablesAndMethodsYourImplementationMustMeetAllSpecificationAndConformToTheExample)
+    public static void main(String[] WriteTheCompleteStepTrackerClassIncludingTheConstructorAndAnyRequiredInstanceVariablesAndMethodsYourImplementationMustMeetAllSpecificationsAndConformToTheExample)
     {
         StepTracker tr = new StepTracker(10000);
         System.out.println(tr.activeDays());
