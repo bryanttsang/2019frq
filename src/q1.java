@@ -1,11 +1,36 @@
 public class q1
 {
 
-    private static int dayOfYear(int inMonth, int inDay, int inYear)
+    private static int dayOfYear(int month, int dayOfMonth, int inYear)
     {
-        return (inMonth-1)*30 + inDay;
+        if (month == 2) {
+            dayOfMonth += 31;
+        } else if (month == 3) {
+            dayOfMonth += 59;
+        } else if (month == 4) {
+            dayOfMonth += 90;
+        } else if (month == 5) {
+            dayOfMonth += 31 + 28 + 31 + 30;
+        } else if (month == 6) {
+            dayOfMonth += 31 + 28 + 31 + 30 + 31;
+        } else if (month == 7) {
+            dayOfMonth += 31 + 28 + 31 + 30 + 31 + 30;
+        } else if (month == 8) {
+            dayOfMonth += 31 + 28 + 31 + 30 + 31 + 30 + 31;
+        } else if (month == 9) {
+            dayOfMonth += 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31;
+        } else if (month == 10) {
+            dayOfMonth += 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30;
+        } else if (month == 11) {
+            dayOfMonth += 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31;
+        } else if (month == 12) {
+            dayOfMonth += 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + 31;
+        }
 
+        if (isLeapYear(inYear)&& (month > 2 || (month ==2 && dayOfMonth == 29)))
+        return dayOfMonth +1;
 
+        return dayOfMonth;
     }
 
     public static boolean isLeapYear(int year)
@@ -35,6 +60,8 @@ public class q1
         return count;
     }
 
+
+    // Part B
     public static int dayOfWeek(int inMonth, int inDay, int inYear)
     {
         int  month, year, day,c;
@@ -68,7 +95,16 @@ public class q1
 
     public static void main(String [] args)
     {
-
+        System.out.println("isLeapYear(2016)?");
+        System.out.println(isLeapYear(2016));
+        System.out.println("isLeapYear(2017)?");
+        System.out.println(isLeapYear(2017));
+        System.out.println("dayOfWeek(1,10,2019) == 4?");
+        System.out.println(4==dayOfWeek(1,10,2019));
+        System.out.println("dayOfYear(3, 1, 2017) == 60?");
+        System.out.println(dayOfYear(3, 1, 2017) == 60);
+        System.out.println("dayOfYear(3, 1, 2016) == 61?");
+        System.out.println(dayOfYear(3, 1, 2016) == 61);
 
     }
 
